@@ -1,13 +1,18 @@
 package com.aka.jet.common;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+import com.aka.jet.common.bean.AirPort;
+
+import java.util.Arrays;
+
 public class CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommonApplication.class, args);
+        AirPort airPort = new AirPort();
+        airPort.setBoards(Arrays.asList("S","VNU"));
+        System.out.print(airPort.getBoards());
+        airPort.addBoard("VNU");
+        System.err.printf(airPort.toString());
     }
 
 }
